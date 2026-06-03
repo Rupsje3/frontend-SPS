@@ -31,3 +31,7 @@ else if ((spelerKeuze === "Steen" && computerKeuze === "Schaar") ||
 } else {
     resultaat.textContent = "De computer wint!";
 }
+
+return spelerKeuze;
+return computerKeuze;
+return resultaat;
