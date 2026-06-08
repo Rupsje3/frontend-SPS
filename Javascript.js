@@ -23,25 +23,20 @@ function spelen(spelerKeuze) {
 
     //winnaar bepalen
     if (spelerKeuze === computerKeuze) {
-        resultaat.textContent = "Gelijkspel!";
+        resultaat = "Gelijkspel!";
     }
     else if ((spelerKeuze === "Steen" && computerKeuze === "Schaar") ||
             (spelerKeuze === "Papier" && computerKeuze === "Steen") ||
             (spelerKeuze === "Schaar" && computerKeuze === "Papier")) {
-        resultaat.textContent = "Je wint!";
+        resultaat = "Je wint!";
     } else {
-        const resultaatElement = document.getElementById("resultaat");
+        resultaat = "Je verliest!";
     }
-
-    return{
-        spelerKeuze: spelerKeuze,
-        computerKeuze: computerKeuze,
-        resultaat: resultaat
-    };
 
     console.log("Speler keuze: " + spelerKeuze);
     console.log("Computer keuze: " + computerKeuze);
-    console.log("Resultaat: " + resultaat.textContent);
+    console.log("Resultaat: " + resultaat);
+    document.getElementById("resultaat").innerHTML = resultaat;
 }
 
 // event listeners toevoegen aan knoppen
