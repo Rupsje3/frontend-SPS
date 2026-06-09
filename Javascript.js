@@ -1,27 +1,27 @@
-// Elementen selecteren
+// selecting Elements
 const computerKeuze = document.getElementById("computer-keuze");
 const spelerKeuze = document.getElementById("speler-keuze");
 const resultaat = document.getElementById("resultaat");
-const steenKnop = document.getElementById("steen");
-const papierKnop = document.getElementById("papier");
-const schaarKnop = document.getElementById("schaar");
+const steenKnop = document.getElementById("Steen");
+const papierKnop = document.getElementById("Papier");
+const schaarKnop = document.getElementById("Schaar");
 
-// Mogelijke keuzes
+// possible choices
 const keuzes = ["Steen", "Papier", "Schaar"];
 
-// Functie om te spelen
+// Function to play the game
 function spelen(spelerKeuze) {
 
-    // Computer kiest willekeurig
+    // Computer chooses randomly
     let computerKeuze = keuzes[Math.floor(Math.random() * 3)];
 
-    // resultaten tonen
+    // display result
     document.getElementById("speler-keuze").innerHTML = spelerKeuze;
     document.getElementById("computer-keuze").innerHTML = computerKeuze;
 
     let resultaat = "";
 
-    //winnaar bepalen
+    // choose winner
     if (spelerKeuze === computerKeuze) {
         resultaat = "Gelijkspel!";
     }
@@ -39,7 +39,7 @@ function spelen(spelerKeuze) {
     document.getElementById("resultaat").innerHTML = resultaat;
 }
 
-// event listeners toevoegen aan knoppen
+// adding event listeners to buttons
 buttons = document.querySelectorAll(".button");
 buttons.forEach(button => {
     button.addEventListener("click", function() {
