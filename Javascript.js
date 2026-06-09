@@ -40,6 +40,10 @@ function spelen(spelerKeuze) {
 }
 
 // event listeners toevoegen aan knoppen
-steenKnop.addEventListener("click", () => spelen("Steen"));
-papierKnop.addEventListener("click", () => spelen("Papier"));
-schaarKnop.addEventListener("click", () => spelen("Schaar")); 
+buttons = document.querySelectorAll(".button");
+buttons.forEach(button => {
+    button.addEventListener("click", function() {
+        const keuze = this.id;
+        spelen(keuze);
+    });
+});
