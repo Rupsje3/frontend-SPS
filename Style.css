@@ -16,13 +16,19 @@ button {
     cursor: pointer;
 }
 
-h2 {
+.title {
     text-align: center;
     color: #000000;
-    
+    margin-right: 5px;
 }
 
-h3 {
+.result {
     text-align: center;
     color: #000000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
