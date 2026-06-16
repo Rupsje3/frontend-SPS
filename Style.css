@@ -1,11 +1,11 @@
 body {
-    background-color: #66c4ac;
+    background-color: #000000;
     font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
-    color: #000000;
+    color: #ffffff;
 }
 
 button {
@@ -18,13 +18,13 @@ button {
 
 .title {
     text-align: center;
-    color: #000000;
+    color: #ffffff;
     margin-right: 5px;
 }
 
 .result {
     text-align: center;
-    color: #000000;
+    color: #ffffff;
 }
 
 .container {
