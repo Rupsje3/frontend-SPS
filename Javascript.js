@@ -1,3 +1,9 @@
+// geluiden
+const winSound = document.querySelector("#winSound");
+const loseSound = document.querySelector("#loseSound");
+const drawSound = document.querySelector("#drawSound");
+
+
 // selecting Elements
 const computerKeuze = document.getElementById("computer-keuze");
 const spelerKeuze = document.getElementById("speler-keuze");
@@ -24,13 +30,19 @@ function spelen(spelerKeuze) {
     // choose winner
     if (spelerKeuze === computerKeuze) {
         resultaat = "Gelijkspel!";
+        drawSound.currentTime = 0; // Reset the audio to the beginning
+        drawSound.play();
     }
     else if ((spelerKeuze === "Steen" && computerKeuze === "Schaar") ||
             (spelerKeuze === "Papier" && computerKeuze === "Steen") ||
             (spelerKeuze === "Schaar" && computerKeuze === "Papier")) {
         resultaat = "Je wint!";
+        winSound.currentTime = 0; // Reset the audio to the beginning
+        winSound.play();
     } else {
         resultaat = "Je verliest!";
+        loseSound.currentTime = 0; // Reset the audio to the beginning
+        loseSound.play();
     }
 
     console.log("Speler keuze: " + spelerKeuze);
