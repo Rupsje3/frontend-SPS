@@ -15,6 +15,20 @@ const schaarKnop = document.getElementById("Schaar");
 // possible choices
 const keuzes = ["Steen", "Papier", "Schaar"];
 
+// Score elementen ophalen
+const spelerScoreOutput = document.querySelector("#spelerScore");
+const computerScoreOutput = document.querySelector("#computerScore");
+
+// Win streak elementen ophalen
+const winStreakOutput = document.querySelector("#winStreak");
+const hoogsteStreakOutput = document.querySelector("#hoogsteStreak");
+
+// Score bijhouden
+let spelerScore = 0;
+let computerScore = 0;
+let winStreak = 0;
+let hoogsteStreak = 0;
+
 // Function to play the game
 function spelen(spelerKeuze) {
 
@@ -30,19 +44,31 @@ function spelen(spelerKeuze) {
     // choose winner
     if (spelerKeuze === computerKeuze) {
         resultaat = "Gelijkspel!";
-        drawSound.currentTime = 0; // Reset the audio to the beginning
+        drawSound.currentTime = 0; // Reset de audio naar het begin
         drawSound.play();
     }
     else if ((spelerKeuze === "Steen" && computerKeuze === "Schaar") ||
             (spelerKeuze === "Papier" && computerKeuze === "Steen") ||
             (spelerKeuze === "Schaar" && computerKeuze === "Papier")) {
         resultaat = "Je wint!";
-        winSound.currentTime = 0; // Reset the audio to the beginning
+        winSound.currentTime = 0;
         winSound.play();
+        spelerScore++;
+        spelerScoreOutput.innerHTML = spelerScore; //werkt score bij in de HTML
+        winStreak++;
+        winStreakOutput.innerHTML = winStreak;
+        if (winStreak > hoogsteStreak) {
+            hoogsteStreak = winStreak;
+            hoogsteStreakOutput.innerHTML = hoogsteStreak;
+        }
     } else {
         resultaat = "Je verliest!";
-        loseSound.currentTime = 0; // Reset the audio to the beginning
+        loseSound.currentTime = 0;
         loseSound.play();
+        computerScore++;
+        computerScoreOutput.innerHTML = computerScore;
+        winStreak = 0; // Reset de win streak
+        winStreakOutput.innerHTML = winStreak;
     }
 
     console.log("Speler keuze: " + spelerKeuze);

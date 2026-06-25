@@ -6,6 +6,7 @@ body {
 h1 {
     text-align: center;
     color: #ffffff;
+    font-size: 36px;
 }
 
 button {
@@ -20,20 +21,58 @@ button {
     text-align: center;
     color: #ffffff;
     margin-right: 5px;
+    font-size: 24px;
 }
 
 .result {
     text-align: center;
     color: #ffffff;
+    font-size: 18px;
 }
 
 .container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+}
+
+/* Score container */
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Score vakken */
+.score-box,
+.streak-box {
+    background: rgba(129, 127, 127, 0.517);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 18px;
+    padding: 18px 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgb(207, 207, 207);
+}
+
+/* Streak tekst */
+.streak-label {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 8px 0;
+    color: #ffffff;
+}
+
+/* result box */
+.result-box {
+    margin-top: 20px;
 }
